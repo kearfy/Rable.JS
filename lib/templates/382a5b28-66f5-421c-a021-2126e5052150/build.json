@@ -1,0 +1,13 @@
+{
+    "uuid": "382a5b28-66f5-421c-a021-2126e5052150",
+    "version": "1.0.0",
+    "name": "FlexPlate",
+    "author": "Micha de Vries",
+    "authorReferral": "https://michadevries.nl",
+    "file": "template.html",
+    "clientScript": "client.js",
+    "elements": {
+        "navbar": "elements/navbar.html",
+        "footer": "elements/footer.html"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "uuid": "5eed5a00-5897-11ea-8e2d-0242ac130003",
+    "version": "1.0.0",
+    "name": "FlexPlateTheme",
+    "author": "Micha de Vries",
+    "authorReferral": "https://michadevries.nl",
+    "assetsFolder": "assets",
+    "compatibleTemplates": ["382a5b28-66f5-421c-a021-2126e5052150"]
+}

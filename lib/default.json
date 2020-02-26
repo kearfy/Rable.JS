@@ -1,0 +1,13 @@
+{
+    "port": 80,
+    "ssl": false,
+    "errorDocument": {
+        "404": "DefaultDocument"
+    },
+    "proxy": false,
+    "matchByProxy": false,
+    "template": "382a5b28-66f5-421c-a021-2126e5052150",
+    "theme": "5eed5a00-5897-11ea-8e2d-0242ac130003",
+    "allowedSources": false,
+    "skipThemeCompatibility": false
+}
