@@ -11,5 +11,10 @@
   "dependencies": {
     "jsdom": "^16.2.0",
     "uuid": "^3.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kearfy/rable.js.git"
+    "directory": "lib"
+  },
 }
