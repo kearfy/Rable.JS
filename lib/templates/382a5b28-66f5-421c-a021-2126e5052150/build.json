@@ -9,5 +9,8 @@
     "elements": {
         "navbar": "elements/navbar.html",
         "footer": "elements/footer.html"
+    },
+    "errorDocument": {
+        "404": "views/ErrorDocument404.html"
     }
 }

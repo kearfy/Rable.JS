@@ -1,0 +1,156 @@
+<div class="container">
+    <div  class="intro">
+        <h1>Other page.</h1>
+        <br>
+        <p>
+            I see you've made it to the other page! <br>
+            That was a great example of the default built-in ajax navigation system. <br>
+            The ajax navigation system isn't <i>actually</i> built into rable.js, it is built into the default theme of rable: FlexPlate, which is short for Flexible Template.
+            <br><br>
+            For the rest there isn't much to see here, if you want to relive the whole expirience again, you can go back to the <a href="/">homepage</a>.
+            But of course you are free to stick around and check out some of these small posts on the page!
+        </p>
+
+        <div class="bottom">
+            <p>&copy; <span class="brand"><?app:name?></span> <span class="current-year"></span>, All rights served.</p>
+            <p><?app:developer?></p>
+        </div>
+    </div>
+    <div class="posts">
+        <div>
+            <h2>Welcome to Rable.js</h2>
+            <br>
+            <p>
+                Welcome to Rable.js! We rable currently is in alpha, so we are far from finished, but the project is definitely making a lot of progress behind the scene's. With that said, the project is definitely in a working state already.
+            </p>
+        </div>
+        <div>
+            <h2>Documentation</h2>
+            <br>
+            <p>
+                As of now, the documentation is very basic and doesn't dive deep into all the mechanics. Therefor we will either use an existing documentaion software, or invite someone to help us out writing a good documentation.
+            </p>
+        </div>
+        <div>
+            <h2>Developers</h2>
+            <br>
+            <p>
+                Currently, there is one developer on the project: <a href="https://michadevries.nl" target="_blank">Micha de Vries</a>.
+                You can check out his <a href="https://github.com/kearfy" target="_blank">Github</a> and <a href="https://instagram.com/kearfy" target="_blank">Instagram</a> if you'd like to.
+                To contact him, send a message on discord to: @kearfy#2139 or send him an email to: <a href="mailto:contact@michadevries.nl" target="_blank">contact@michadevries.nl</a>.
+            </p>
+        </div>
+        <div>
+            <h2>Final words</h2>
+            <br>
+            <p>
+                We hope the project will help you out and we would love to hear about it. Good luck!
+            </p>
+        </div>
+        <div>
+            <h2>Try some 404.</h2>
+            <br>
+            <p>
+                The default template intergrated into rable provides some stunning error documents. For now, the selection is limited to the 404 document, but they will definitely be expanded.
+                <br><br>
+                Take a look at it <a href="/404">here</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<style media="screen">
+    div.footer {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        min-height: calc(100vh - 60px);
+        display: flex;
+    }
+
+    .container .intro {
+        width: 25%;
+        height: calc(70vh - 60px);
+        padding: 15vh 5%;
+        background-color: #f1f1f1;
+        position: fixed;
+    }
+
+    .container .intro .bottom {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 5vh;
+        font-size: 13px;
+    }
+
+    .container .intro .bottom .brand {
+        font-weight: 600;
+    }
+
+    .container .posts {
+        width: 55%;
+        margin: 0px 5%;
+        position: absolute;
+        right: 0;
+
+        -webkit-column-count: 2;
+        -webkit-column-gap:   10vh;
+        -moz-column-count:    2;
+        -moz-column-gap:      10vh;
+        column-count:         2;
+        column-gap:           10vh;
+    }
+
+    .container .posts div {
+        background-color: #f1f1f1;
+        width: 80%;
+        padding: 10%;
+        display: block;
+        margin-bottom: 10%;
+        page-break-inside: avoid;
+    }
+
+    @media only screen and (max-width: 768px) {
+        div.footer {
+            display: flex;
+        }
+
+        .container {
+            display: block;
+        }
+
+        .container .intro {
+            position: static;
+            width: 90%;
+            height: calc(80vh - 60px);
+            padding: 5vh 5%;
+            background-color: #d9d9d9;
+        }
+
+        .container .intro .bottom {
+            display: none;
+        }
+
+        .container .posts {
+            width: 90%;
+            padding: 5vh 5%;
+            position: static;
+            display: block;
+            margin: 0px;
+
+            -webkit-column-count: 1;
+            -moz-column-count:    1;
+            column-count:         1;
+        }
+
+        .container .posts div {
+            background-color: #d9d9d9;
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    document.querySelectorAll('.current-year').forEach(el => el.innerText = new Date().getFullYear());
+</script>

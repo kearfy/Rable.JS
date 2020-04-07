@@ -9,6 +9,20 @@ Use the package manager [npm](https://npmjs.com) to install Rable.
 npm install rable.js
 ```
 
+## Example files
+
+The index.js and the files within /views/ are there as an example and being used in development. In case you want to to try it out, do as follows:
+For this example git and npm need to be installed on your system.
+
+```bash
+    git clone https://github.com/kearfy/rable.js rablejs-example && cd rablejs-example/lib
+    npm install
+    cd ../
+    node .
+```
+
+The example is now available through port 3001
+
 ## Basic Usage
 
 To import Rable into your project, we will first have to require the library, then initialize it.
@@ -57,8 +71,8 @@ If for some reason the proxy needs to be reset, you can make use of app.clearPro
 To register your first route, make use of one of the following functions (currently we only build functions for GET and POST, but other request methods can be registered aswell).
 
 ```javascript
-    app.get('/', (req, res) => res.send('welcome to my website!'));
-    app.post('/', (req, res) => res.json({
+    app.get('/', () => res.send('welcome to my website!'));
+    app.post('/', () => res.json({
         my: 'first',
         ever: 'API!'
     }));

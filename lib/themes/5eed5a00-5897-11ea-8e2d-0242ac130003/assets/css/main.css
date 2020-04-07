@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 /* links styling */
     a {
         text-decoration: none;
         color: royalblue;
+        cursor: pointer;
     }
 
     a:visited {
@@ -83,6 +86,10 @@ div.navbar .links a:nth-child(1) {
 }
 
 @media (max-width: 1024px) {
+    div.navbar .brand {
+        font-size: 18px;
+    }
+
     div.navbar label {
         display: block;
     }
@@ -115,7 +122,7 @@ div.navbar .links a:nth-child(1) {
 
 div.content {
     padding-top: 60px;
-    height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
     position: relative;
     z-index: 996;
 }
@@ -123,22 +130,36 @@ div.content {
 div.footer {
     width: 90%;
     height: 80px;
-    line-height: 80px;
     padding: 0px 5%;
     background-color: black;
-    color: white !important;
+    color: white;
     font-size: 16px;
     font-weight: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
+div.footer .inner-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 16px;
 }
 
 div.footer .brand {
     font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+    div.footer {
+        font-size: 12px;
+    }
+
+    div.footer .inner-flex {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
