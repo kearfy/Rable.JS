@@ -23,37 +23,25 @@
             <p>
                 Welcome to Rable.js! We rable currently is in alpha, so we are far from finished, but the project is definitely making a lot of progress behind the scene's. With that said, the project is definitely in a working state already.
             </p>
-        </div>
-        <div>
-            <h2>Documentation</h2>
+            <br>
+            <h4>Documentation</h4>
             <br>
             <p>
                 As of now, the documentation is very basic and doesn't dive deep into all the mechanics. Therefor we will either use an existing documentaion software, or invite someone to help us out writing a good documentation.
             </p>
-        </div>
-        <div>
-            <h2>Developers</h2>
+            <br>
+            <h4>Developers</h4>
             <br>
             <p>
                 Currently, there is one developer on the project: <a href="https://michadevries.nl" target="_blank">Micha de Vries</a>.
                 You can check out his <a href="https://github.com/kearfy" target="_blank">Github</a> and <a href="https://instagram.com/kearfy" target="_blank">Instagram</a> if you'd like to.
                 To contact him, send a message on discord to: @kearfy#2139 or send him an email to: <a href="mailto:contact@michadevries.nl" target="_blank">contact@michadevries.nl</a>.
             </p>
-        </div>
-        <div>
-            <h2>Final words</h2>
+            <br>
+            <h4>Final words</h4>
             <br>
             <p>
                 We hope the project will help you out and we would love to hear about it. Good luck!
-            </p>
-        </div>
-        <div>
-            <h2>Try some 404.</h2>
-            <br>
-            <p>
-                The default template intergrated into rable provides some stunning error documents. For now, the selection is limited to the 404 document, but they will definitely be expanded.
-                <br><br>
-                Take a look at it <a href="/404">here</a>
             </p>
         </div>
     </div>
@@ -153,4 +141,43 @@
 
 <script type="text/javascript">
     document.querySelectorAll('.current-year').forEach(el => el.innerText = new Date().getFullYear());
+
+    (async function() {
+        await fetch('https://strapi.michadevries.nl/Rable-Posts').then(res => res.json()).then(res => res.forEach(post => {
+            var card = document.createElement('div');
+
+            if (post.Banner !== null) {
+                var banner = document.createElement('img');
+                let linebreak = document.createElement('br');
+                banner.url = post.Banner.url;
+                banner.alt = 'unable to load banner';
+
+                card.appendChild(banner);
+                card.appendChild(linebreak);
+            }
+
+            if (post.Title !== null && post.Title !== '') {
+                var title = document.createElement('h2');
+                let linebreak = document.createElement('br');
+                title.innerHTML = post.Title;
+
+                card.appendChild(title);
+                card.appendChild(linebreak);
+            }
+
+            if (post.Content !== null && post.Content !== '') {
+                var content = document.createElement('p');
+                content.innerHTML = post.Content;
+
+                card.appendChild(content);
+            }
+
+            document.querySelector('.posts').appendChild(card);
+        })).catch(e => {
+            console.error(e);
+            alert('Failed to fetch the posts from michadevries.nl!');
+        });
+
+        ClientRouter.initializeLinks();
+    })();
 </script>

@@ -8,7 +8,7 @@ app.setProxy({
 	secure: true
 });
 
-app.info.set('name', 'Rable.JS on michadevries.nl');
+app.info.set('name', 'Rable.JS Introduction');
 
 app.get('/', __dirname + '/views/home.html');
 app.get('/other', (req, res) => res.sendFile(__dirname + '/views/other.html'));
