@@ -15,9 +15,7 @@ The index.js and the files within /views/ are there as an example and being used
 For this example git and npm need to be installed on your system.
 
 ```bash
-    git clone https://github.com/kearfy/rable.js rablejs-example && cd rablejs-example/lib
-    npm install
-    cd ../
+    git clone https://github.com/kearfy/rable.js rablejs-example && cd rablejs-example/lib && npm install && cd ../
     node .
 ```
 
