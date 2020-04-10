@@ -19,7 +19,8 @@ For this example git and npm need to be installed on your system.
     node .
 ```
 
-The example is now available through port 3001
+The example is now available through port 3001.
+You can also take a look at the publicly hosted example over here: https://rable.app.michadevries.nl
 
 ## Basic Usage
 

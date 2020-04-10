@@ -1,11 +1,8 @@
 {
   "name": "rable.js",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Rable is a library for NodeJS providing an advanced router and templating system.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Micha de Vries",
   "license": "MPL-2.0",
   "dependencies": {
