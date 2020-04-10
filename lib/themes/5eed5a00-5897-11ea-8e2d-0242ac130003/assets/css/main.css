@@ -163,3 +163,85 @@ div.footer .brand {
         justify-content: center;
     }
 }
+
+div.notifications {
+    width: 350px;
+    margin: 85px calc(5% / 2) 0px 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    max-height: calc(100vh - 190px);
+    overflow-y: scroll;
+}
+
+div.notifications > div {
+    transition: max-height .5s;
+    overflow: hidden;
+    max-height: 0px;
+}
+
+div.notifications > div.closed {
+    max-height: 0px !important;
+}
+
+div.notifications::-webkit-scrollbar,
+div.notifications > div::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+div.notifications > div > div {
+    width: calc(100% - 50px);
+    padding: 25px;
+    background-color: #e5e5e5;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+div.notifications > div > div.error {
+    background-color: #ef3934;
+}
+
+div.notifications > div > div.info {
+    background-color: #2f86eb;
+}
+
+div.notifications > div > div.success {
+    background-color: #44c95b;
+}
+
+div.notifications > div > div.warning {
+    background-color: #ffb400;
+}
+
+div.notifications > div p {
+    max-width: calc(100% - 45px);
+}
+
+div.notifications > div > div span {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+div.notifications > div > div span:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+    div.notifications {
+        width: 85%;
+        margin: 85px calc(15% / 2) 0px calc(15% / 2);
+    }
+}
