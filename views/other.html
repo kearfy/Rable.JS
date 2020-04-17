@@ -27,7 +27,8 @@
             <h4>Documentation</h4>
             <br>
             <p>
-                As of now, the documentation is very basic and doesn't dive deep into all the mechanics. Therefor we will either use an existing documentaion software, or invite someone to help us out writing a good documentation.
+                As far as we know, everything has been properly documentated with the great help of <a href="https://jsdoc.app">jsdoc</a>, but we're always open to suggestions. Take a look at it <a href="/docs/" noajax>here</a>. <br>
+                <span class="public-docs">It's also publicly available in the <a href="https://rable.docs.michadevries.nl/docs/">hosted introduction.</a></span>
             </p>
             <br>
             <h4>Developers</h4>
@@ -180,4 +181,6 @@
 
         ClientRouter.initializeLinks();
     })();
+
+    if (location.host =='rable.app.michadevries.nl') document.querySelector('.public-docs').style.display = 'none';
 </script>

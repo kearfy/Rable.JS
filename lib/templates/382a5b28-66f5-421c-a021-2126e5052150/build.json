@@ -7,8 +7,8 @@
     "file": "template.html",
     "clientScript": "client.js",
     "elements": {
-        "navbar": "elements/navbar.html",
-        "footer": "elements/footer.html"
+        "navbar": "elements/navbar.rbl",
+        "footer": "elements/footer.rbl"
     },
     "errorDocument": {
         "404": "views/ErrorDocument404.html"
