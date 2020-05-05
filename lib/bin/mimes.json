@@ -35,6 +35,7 @@
     "pdf": "application/pdf",
     "ppt": "application/vnd.ms-powerpoint",
     "rar": "application/x-rar-compressed",
+    "rbl": "text/html",
     "rtf": "application/rtf",
     "sh": "application/x-sh",
     "svg": "image/svg+xml",

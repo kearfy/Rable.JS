@@ -14,4 +14,7 @@ app.info.set('name', 'Rable.JS Introduction');
 
 app.get('/', __dirname + '/views/home.html');
 app.get('/other', (req, res) => res.sendFile(__dirname + '/views/other.html'));
-app.static('/docs', __dirname + '/docs', {noTemplate: true});
+app.get('/nonauthorized', (req, res) => res.sendError(403));
+app.get('/servererror', (req, res) => res.sendError(500, req.query));
+
+app.static('/docs', __dirname + '/docs/rable.js', {noTemplate: true});

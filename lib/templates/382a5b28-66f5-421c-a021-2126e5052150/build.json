@@ -4,13 +4,15 @@
     "name": "FlexPlate",
     "author": "Micha de Vries",
     "authorReferral": "https://michadevries.nl",
-    "file": "template.html",
+    "file": "template.rbl",
     "clientScript": "client.js",
     "elements": {
         "navbar": "elements/navbar.rbl",
         "footer": "elements/footer.rbl"
     },
     "errorDocument": {
-        "404": "views/ErrorDocument404.html"
+        "403": "views/ErrorDocument403.html",
+        "404": "views/ErrorDocument404.html",
+        "500": "views/ErrorDocument500.rbl"
     }
 }
