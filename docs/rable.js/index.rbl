@@ -1,0 +1,5 @@
+<script type="text/javascript">
+    location.replace('./<?var:global.rable.version?>/');
+</script>
+
+<p>Check out the latest docs <a href="./<?var:global.rable.version?>/">here</a>.</p>
