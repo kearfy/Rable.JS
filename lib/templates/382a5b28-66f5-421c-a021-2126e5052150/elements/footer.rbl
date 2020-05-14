@@ -1,2 +1,2 @@
 <p>&copy; <span class="brand"><?app:name?></span> <span class="current-year"></span>, All rights served.</p>
-<p ><?app:developer?></p>
+<p><?app:developer?></p>
