@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>index.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/search.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script> -->
+    <script src="scripts/fuse.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><h3>Classes</h3><ul><li><a href="Rable.html">Rable</a><ul class='methods'><li data-type='method'><a href="Rable.html#clearProxy">clearProxy</a></li><li data-type='method'><a href="Rable.html#cors">cors</a></li><li data-type='method'><a href="Rable.html#get">get</a></li><li data-type='method'><a href="Rable.html#getErrorDocument">getErrorDocument</a></li><li data-type='method'><a href="Rable.html#getMimeType">getMimeType</a></li><li data-type='method'><a href="Rable.html#matchRoute">matchRoute</a></li><li data-type='method'><a href="Rable.html#matchUrl">matchUrl</a></li><li data-type='method'><a href="Rable.html#middlewares">middlewares</a></li><li data-type='method'><a href="Rable.html#obtainRoute">obtainRoute</a></li><li data-type='method'><a href="Rable.html#post">post</a></li><li data-type='method'><a href="Rable.html#registerMimeType">registerMimeType</a></li><li data-type='method'><a href="Rable.html#registerRoute">registerRoute</a></li><li data-type='method'><a href="Rable.html#setErrorDocument">setErrorDocument</a></li><li data-type='method'><a href="Rable.html#setProxy">setProxy</a></li><li data-type='method'><a href="Rable.html#static">static</a></li><li data-type='method'><a href="Rable.html#use">use</a></li></ul></li><li><a href="SmartTag.html">SmartTag</a><ul class='methods'><li data-type='method'><a href="SmartTag.html#getGlobalVariable">getGlobalVariable</a></li><li data-type='method'><a href="SmartTag.html#setGlobalVariable">setGlobalVariable</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method'><a href="Template.html#build">build</a></li><li data-type='method'><a href="Template.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Template.html#exists">exists</a></li><li data-type='method'><a href="Template.html#getElement">getElement</a></li><li data-type='method'><a href="Template.html#info">info</a></li><li data-type='method'><a href="Template.html#setElement">setElement</a></li></ul></li><li><a href="Theme.html">Theme</a><ul class='methods'><li data-type='method'><a href="Theme.html#build">build</a></li><li data-type='method'><a href="Theme.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Theme.html#exists">exists</a></li><li data-type='method'><a href="Theme.html#info">info</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-RouteHandler.html">RouteHandler</a></li><li><a href="module-RouteHandler_DataParser.html">RouteHandler\DataParser</a></li><li><a href="module-RouteHandler_Utils.html">RouteHandler\Utils</a><ul class='methods'><li data-type='method'><a href="module-RouteHandler_Utils.html#~cors">cors</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~json">json</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~redirect">redirect</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~send">send</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendError">sendError</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendFile">sendFile</a></li></ul></li></ul></div>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const http = require('http'),
+      https = require('https'),
+      fs = require('fs'),
+      generateUuid = require('uuid'),
+      SmartTag = require('./bin/modules/smartTag.js'),
+      Template = require('./bin/modules/template.js'),
+      Theme = require('./bin/modules/theme.js');
+
+var routes = {};
+var middlewares = [];
+var urlSpecificMiddlewares = [];
+var appInfo = {
+    name: 'Rable ' + require('./package.json').version,
+    description: 'Rable is a library for NodeJS providing an advanced router and templating system.',
+    keywords: 'Rable, templating, javascript, nodejs, router',
+    lang: 'en',
+    developer: 'Rable is a project by &lt;a href="https://michadevries.nl" target="_blank">Micha de Vries&lt;/a>.'
+}
+
+/**
+ * Initial Library.
+ *
+ * @property {string} root The root location of Rable.
+ * @property {string} version The current version of Rable.
+ * @property {object} config The configuration of Rable.
+ * @property {HTTP} server The http server. See NodeJS documentation.
+ * @property {object} info Information about the application.
+ * @property {Function} info.get Get the value of a property.
+ * @property {Function} info.set Set the value of a property.
+ * @property {SmartTag} smarttag An extention module that handles global variables for SmartTag. See SmartTag for more.
+ * @property {Template} template The templating engine for rable.js. See Template for more.
+ * @property {Theme} theme The theme engine for rable.js. See Theme for more.
+ */
+class Rable {
+    /**
+     * Function that is called upon initialization.
+     *
+     * @param  {object} config configuration applied by user.
+     * @param  {number} config.port The port that the application is running on.
+     * @param  {boolean} config.matchByProxy In case of rable running behind a proxy and if set to true, rable will match by url's given to the proxy, not the full url.
+     * @param  {string|boolean} config.template The uuid of a template or set to false if no template should be loaded.
+     * @param  {string|boolean} config.theme The uuid of a theme of set to false if no theme should be loaded.
+     * @param  {string|boolean} config.allowedSources an array with allowed sources or set to false if no header should be passed. can also be updated with Rable.cors().
+     * @param  {boolean} config.skipThemeCompatibility Skip the theme compatibility check if set to true.
+     * @param  {array} config.directoryIndexes A list of directory indexes contained in an array. Default: index.rbl and index.html
+     * @param  {string} config.templatesDatabase The location where you store your templates.
+     * @param  {string} config.themesDatabase The location where you store your themes.
+     */
+    constructor(input) {
+        this.root = __dirname;
+        this.version = require('./package.json').version;
+        this.config = Object.assign(require('./default.json'), (input === undefined ? {} : input));
+        this.config.mimes = require('./bin/mimes.json');
+        this.server = http.createServer((req, res) => require('./bin/handlers/route.js')(req, res, this, routes)).listen(this.config.port, () => console.log('Application is listening on port ' + this.config.port + '.'));
+        this.info = {
+            get: key => appInfo[key],
+            set: (key, value) => (key === 'developer' ? false : appInfo[key] = value)
+        }
+
+        this.smarttag = new SmartTag(this);
+        this.template = new Template(this);
+        this.theme = new Theme(this);
+    }
+
+
+    /**
+     * Provide information about a potential proxy.
+     *
+     * @param  {object} info Info about the proxy, if empty, the proxy will be cleared.
+     * @param  {string} info.root The root of the proxy, example: /rootOfRableApp/
+     * @param  {string} info.host The host of the proxy.
+     * @param  {number} info.port The port of the proxy. If no value was given but secure is defined, this will automatically be filled in with the defualt ports 80 and 443.
+     * @param  {boolean} info.secure States if proxy is https enabled or not. If no value was given but port was defined, this will automatically be filled in based on the port.
+     */
+    setProxy(input) {
+        if (input === null || input === false) {
+            this.config.proxy = false;
+        } else {
+            this.config.proxy = Object.assign({
+                root: '/',
+                host: 'localhost',
+                port: 80,
+                secure: false
+            }, input);
+
+            this.config.proxy.root = this.config.proxy.root.replace(/\\/g, "/");
+            this.config.proxy.root = (this.config.proxy.root.charAt(0) == '/' ? this.config.proxy.root : '/' + this.config.proxy.root);
+            this.config.proxy.root = (this.config.proxy.root.charAt(this.config.proxy.root.length - 1) == '/' ? this.config.proxy.root : this.config.proxy.root + '/');
+
+            if (input.secure === undefined &amp;&amp; input.port == 443) this.config.proxy.secure = true;
+            if (input.secure === true &amp;&amp; input.port == undefined) this.config.proxy.port = 443;
+        }
+    }
+
+
+    /** clear the configured proxy. */
+    clearProxy() {
+        this.config.proxy = false;
+    }
+
+
+    /**
+     * update or set the action of an errorDocument.
+     *
+     * @param  {number} code            The code of the errorDocument.
+     * @param  {function|string} action   Must be a function or a path to a file.
+     */
+    setErrorDocument(code, action) {
+        this.config.errorDocument[code] = action;
+    }
+
+
+    /**
+     * Get information about an errorDocument
+     *
+     * @param  {number} code        The code of the errorDocument.
+     * @returns {function|string}     Returns a function or the path to a file.
+     */
+    getErrorDocument(code) {
+        if (this.config.errorDocument[code] !== undefined &amp;&amp; this.config.errorDocument[code] !== 'DefaultDocument' &amp;&amp; this.config.errorDocument[code] !== false &amp;&amp; this.config.errorDocument[code] !== null) {
+            return this.config.errorDocument[code];
+        } else {
+            return __dirname + '/views/ErrorDocument' + code + '.rbl';
+        }
+    }
+
+
+    /**
+     * register or update mime types.
+     *
+     * @param  {string} extention   The file extention.
+     * @param  {string} type        The actual mime type.
+     */
+    registerMimeType(extention, type) {
+        if (this.config.mimes[extention] === undefined) this.config.mimes[extention] = type;
+    }
+
+
+    /**
+     * Get the value of a mime type
+     *
+     * @param  {string} extention   The file extention.
+     * @returns {string|null}       return null is undefined.
+     */
+    getMimeType(extention) {
+        return (this.config.mimes[extention] === undefined ? null : this.config.mimes[extention]);
+    }
+
+
+    /**
+     * Register a route with the GET method.
+     *
+     * @param  {string} path                The path / URL of the route.
+     * @param  {string|function} action     Either the path to a file or the function that handles the route.
+     * @param  {object} data                variables passed to Smart-tag.
+     * @param  {boolean} data.noTemplate     A loophole to data where you can specify to not apply the template (also including the theme)
+     * @returns {string}                    The uuid of the route, can later also be obtained by mathing a url.
+     */
+    get(path, action, data = {}) {
+        return this.registerRoute({
+            method: 'GET',
+            path: path,
+            action: action,
+            data: data
+        });
+    }
+
+    /**
+     * Register a route with the POST method.
+     *
+     * @param  {string} path                The path / URL of the route.
+     * @param  {string|function} action     Either the path to a file or the function that handles the route.
+     * @param  {object} data                variables passed to Smart-tag.
+     * @param  {boolean} data.noTemplate     A loophole to data where you can specify to not apply the template (also including the theme)
+     * @returns {string}                    The uuid of the route, can later also be obtained by mathing a url.
+     */
+    post(path, action, data = {}) {
+        return this.registerRoute({
+            method: 'POST',
+            path: path,
+            action: action,
+            data: data
+        });
+    }
+
+    /**
+     * Register a static route listening for every method.
+     *
+     * @param  {string} path                The initial path / url of the route.
+     * @param  {string} action              Path to the folder containing the static content.
+     * @param  {object} data                variables passed to Smart-tag.
+     * @param  {boolean} data.noTemplate    A loophole to data where you can specify to not apply the template (also including the theme)
+     * @returns {string}                    The uuid of the route, can later also be obtained by mathing a url.
+     */
+    static(path, action, data = {}) {
+        return this.registerRoute({
+            method: 'static',
+            path: path,
+            action: action,
+            data: data
+        });
+    }
+
+
+    /**
+     * Manually register a route with for an example, a method that has not yet been implemented in Rable.js (please open an issue or do a pull request if this is the case!)
+     *
+     * @param  {object} input                       Details about the route.
+     * @param  {string} input.method                The method of the route.
+     * @param  {string} input.path                  The path / url of the route.
+     * @param  {string|function} input.action       The action of the route which can either be a function making use of (request, response), a filepath or in case of a static route, the path to a directory.
+     * @param  {object} input.data                  Variables passed to Smart-tag.
+     * @param  {boolean} input.data.noTemplate      A loophole to data where you can specify to not apply the template (also including the theme)
+     * @returns {string}                            The uuid of the route, can later also be obtained by matching a url.
+     */
+    registerRoute(input) {
+        class Route {
+            constructor(input) {
+                this.method = input.method;
+                this.path = input.path;
+                this.action = input.action;
+                this.uuid = input.uuid;
+                this.data = input.data;
+
+                if (input.noTemplate === undefined) {
+                    if (this.data.noTemplate === undefined || this.data.noTemplate === false) {
+                        this.noTemplate = false;
+                    } else {
+                        this.noTemplate = true;
+                    }
+                } else {
+                    this.noTemplate = input.noTemplate;
+                }
+
+                if (this.data.noTemplate !== undefined) delete this.data.noTemplate;
+                if (input.method == 'static' &amp;&amp; typeof input.action != 'string') console.error('The action of a static route must be a path to a directory');
+            }
+
+            purge() {
+                delete routes[uuid];
+            }
+        }
+
+        var uuid = generateUuid();
+        var details = Object.assign({
+            method: 'GET',
+            path: null,
+            action: this.config.defaultIndex,
+            data: {}
+        }, input);
+
+        routes[uuid] = new Route(Object.assign(details, {uuid:uuid}));
+        return routes[uuid];
+    }
+
+
+    /**
+     * Register a middleware.
+     *
+     * @param  {string} path            NOT REQUIRED: In case it is defined, the middleware will only be triggered if the path matches the request.
+     * @param  {function} middleware    A function that will be called before calling the final action of the route. No paramenters need to be defined. req, res and next() will automatically be attached. It is required for next() to be called, instead to properly prevent the final action from being executed, updated res.finished to true.
+     */
+    use(input1, input2) {
+        if (input2 === undefined) {
+            middlewares.push(input1);
+        } else {
+            urlSpecificMiddlewares.push({
+                url: input1,
+                middleware: input2
+            })
+        }
+    }
+
+
+    /**
+     * obtain a list of middlewares (that match a url).
+     *
+     * @param  {string} url     NOT REQUIRED: match the middlewares by a url.
+     * @returns {array}         returns a list of middlewares contained in an array.
+     */
+    middlewares(url = false) {
+        if (url !== false) {
+            var list = [];
+            urlSpecificMiddlewares.forEach(middleware => {
+                if (this.matchUrl(middleware.url, url).match === true) list.push(middleware.middleware);
+            });
+
+            return list;
+        } else {
+            return middlewares;
+        }
+    }
+
+
+    /**
+     * Obtain a route by their uuid.
+     *
+     * @param  {string} uuid    The uuid assigned to the route.
+     * @returns {Route}         A route class will be returned.
+     */
+    obtainRoute(uuid) {
+        return routes[uuid];
+    }
+
+
+    /**
+     * Match a route by url (and method).
+     *
+     * @param  {string} url         The url of the route you are trying to match.
+     * @param  {string} method      NOT REQUIRED: The method of the route.
+     * @returns {object|null}       Returns the uuid of the route and parameters if filled in. null if no route matched.
+     */
+    matchRoute(url, method = false) {
+        var finalRoute = null;
+        Object.keys(routes).forEach(route => {
+            if (finalRoute === null) {
+                route = routes[route];
+                if (!method ? true : (route.method == method || route.method == 'static')) {
+                    var result = this.matchUrl(route.path, url, route.method == 'static');
+                    if (result.match === true) {
+                        finalRoute = {
+                            uuid: route.uuid,
+                            params: result.params
+                        }
+
+                        if (route.method == 'static') finalRoute.target = result.target;
+                    }
+                }
+            }
+        });
+
+        return finalRoute;
+    }
+
+
+    /**
+     * See of two url's match.
+     *
+     * @param  {string} original        The original url (where parameter names are defined with :parameter).
+     * @param  {string} given           The given url (where parameters are filled in.)
+     * @param  {boolean} staticRoute    must be true if the original url is a static route.
+     * @returns {object}                states if url's match, and if so, the values of the parameters. If it is a static route, then the follow up target will also be defined.
+     */
+    matchUrl(original, given, staticRoute = false) {
+        const filter = url => {
+            url = url.split('?')[0];
+            url = url.split('#')[0];
+            url = url.replace(/\\/g, "/");
+            url = (url.charAt(0) == '/' ? url : '/' + url);
+            url = (url.charAt(url.length - 1) == '/' ? url.slice(0, -1) : url);
+            return url;
+        }
+
+        var filteredOriginal = filter(original),
+            filteredGiven = filter(given),
+            explodedOriginal = filteredOriginal.split('/'),
+            explodedGiven = filteredGiven.split('/'),
+            match = true,
+            params = {};
+
+        if (explodedGiven.length === explodedOriginal.length) {
+            explodedGiven.forEach((part, index) => {
+                if (explodedOriginal[index] !== part) {
+                    if (explodedOriginal[index].charAt(0) === ':') {
+                        var param = explodedOriginal[index].substring(1);
+                        params[param] = part;
+                    } else if (explodedOriginal[index] == '~' &amp;&amp; index == explodedOriginal.length - 1) {
+
+                    } else {
+                        match = false;
+                    }
+                }
+            });
+        } else if (!(explodedGiven.length &lt; explodedOriginal.length)) {
+            if (staticRoute) {
+                var target = explodedGiven.join('/');
+                explodedOriginal.forEach((part, index) => {
+                    if (explodedGiven[index] !== part) {
+                        match = false;
+                    } else {
+                        target = explodedGiven.slice(index + 1).join('/');
+                    }
+                });
+            } else if (explodedOriginal[explodedOriginal.length - 1] == '~') {
+                explodedOriginal.forEach((part, index) => {
+                    if (explodedOriginal[index] !== part) {
+                        match = false;
+                    }
+                });
+            } else {
+                match = false;
+            }
+        } else {
+            match = false;
+        }
+
+        var result = {match:match};
+        if (match) result.params = params;
+        if (match &amp;&amp; staticRoute) result.target = target;
+        return result;
+    }
+
+
+    /**
+     * Set allowed sources.
+     *
+     * @param  {string} value allowed sources, example: 'rable.app.michadevries.nl, michadevries.nl, 1.1.1.1, 8.8.8.8'
+     */
+    cors(value) {
+        this.config.allowedSources = value;
+    }
+}
+
+module.exports = Rable;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script>
+var list = [{"title":"Rable","link":"<a href=\"Rable.html\">Rable</a>"},{"title":"Rable#clearProxy","link":"<a href=\"Rable.html#clearProxy\">Rable &rtrif; clearProxy</a>"},{"title":"Rable#cors","link":"<a href=\"Rable.html#cors\">Rable &rtrif; cors</a>"},{"title":"Rable#get","link":"<a href=\"Rable.html#get\">Rable &rtrif; get</a>"},{"title":"Rable#getErrorDocument","link":"<a href=\"Rable.html#getErrorDocument\">Rable &rtrif; getErrorDocument</a>"},{"title":"Rable#getMimeType","link":"<a href=\"Rable.html#getMimeType\">Rable &rtrif; getMimeType</a>"},{"title":"Rable#matchRoute","link":"<a href=\"Rable.html#matchRoute\">Rable &rtrif; matchRoute</a>"},{"title":"Rable#matchUrl","link":"<a href=\"Rable.html#matchUrl\">Rable &rtrif; matchUrl</a>"},{"title":"Rable#middlewares","link":"<a href=\"Rable.html#middlewares\">Rable &rtrif; middlewares</a>"},{"title":"Rable#obtainRoute","link":"<a href=\"Rable.html#obtainRoute\">Rable &rtrif; obtainRoute</a>"},{"title":"Rable#post","link":"<a href=\"Rable.html#post\">Rable &rtrif; post</a>"},{"title":"Rable#registerMimeType","link":"<a href=\"Rable.html#registerMimeType\">Rable &rtrif; registerMimeType</a>"},{"title":"Rable#registerRoute","link":"<a href=\"Rable.html#registerRoute\">Rable &rtrif; registerRoute</a>"},{"title":"Rable#setErrorDocument","link":"<a href=\"Rable.html#setErrorDocument\">Rable &rtrif; setErrorDocument</a>"},{"title":"Rable#setProxy","link":"<a href=\"Rable.html#setProxy\">Rable &rtrif; setProxy</a>"},{"title":"Rable#static","link":"<a href=\"Rable.html#static\">Rable &rtrif; static</a>"},{"title":"Rable#use","link":"<a href=\"Rable.html#use\">Rable &rtrif; use</a>"},{"title":"SmartTag","link":"<a href=\"SmartTag.html\">SmartTag</a>"},{"title":"SmartTag#getGlobalVariable","link":"<a href=\"SmartTag.html#getGlobalVariable\">SmartTag &rtrif; getGlobalVariable</a>"},{"title":"SmartTag#setGlobalVariable","link":"<a href=\"SmartTag.html#setGlobalVariable\">SmartTag &rtrif; setGlobalVariable</a>"},{"title":"Template","link":"<a href=\"Template.html\">Template</a>"},{"title":"Template#build","link":"<a href=\"Template.html#build\">Template &rtrif; build</a>"},{"title":"Template#buildRoot","link":"<a href=\"Template.html#buildRoot\">Template &rtrif; buildRoot</a>"},{"title":"Template#exists","link":"<a href=\"Template.html#exists\">Template &rtrif; exists</a>"},{"title":"Template#getElement","link":"<a href=\"Template.html#getElement\">Template &rtrif; getElement</a>"},{"title":"Template#info","link":"<a href=\"Template.html#info\">Template &rtrif; info</a>"},{"title":"Template#setElement","link":"<a href=\"Template.html#setElement\">Template &rtrif; setElement</a>"},{"title":"Theme","link":"<a href=\"Theme.html\">Theme</a>"},{"title":"Theme#build","link":"<a href=\"Theme.html#build\">Theme &rtrif; build</a>"},{"title":"Theme#buildRoot","link":"<a href=\"Theme.html#buildRoot\">Theme &rtrif; buildRoot</a>"},{"title":"Theme#exists","link":"<a href=\"Theme.html#exists\">Theme &rtrif; exists</a>"},{"title":"Theme#info","link":"<a href=\"Theme.html#info\">Theme &rtrif; info</a>"},{"title":"RouteHandler","link":"<a href=\"module-RouteHandler.html\">RouteHandler</a>"},{"title":"RouteHandler\\DataParser","link":"<a href=\"module-RouteHandler_DataParser.html\">RouteHandler\\DataParser</a>"},{"title":"RouteHandler\\Utils","link":"<a href=\"module-RouteHandler_Utils.html\">RouteHandler\\Utils</a>"},{"title":"module:RouteHandler\\Utils~cors","link":"<a href=\"module-RouteHandler_Utils.html#~cors\">module:RouteHandler\\Utils~cors &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~json","link":"<a href=\"module-RouteHandler_Utils.html#~json\">module:RouteHandler\\Utils~json &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~redirect","link":"<a href=\"module-RouteHandler_Utils.html#~redirect\">module:RouteHandler\\Utils~redirect &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~send","link":"<a href=\"module-RouteHandler_Utils.html#~send\">module:RouteHandler\\Utils~send &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendError","link":"<a href=\"module-RouteHandler_Utils.html#~sendError\">module:RouteHandler\\Utils~sendError &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendFile","link":"<a href=\"module-RouteHandler_Utils.html#~sendFile\">module:RouteHandler\\Utils~sendFile &rtrif; undefined</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>
