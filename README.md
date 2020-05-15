@@ -6,6 +6,11 @@ Use the package manager [npm](https://npmjs.com) to install Rable.
 ```bash
 npm install rable.js
 ```
+Afterwards, you can create a Rable instance like the following
+```javascript
+const Rable = require('rable.js');
+const app = new Rable();
+```
 
 ## Example files
 The index.js and the files within /views/ are there as an example and being used in development. In case you want to to try it out, do as follows:
