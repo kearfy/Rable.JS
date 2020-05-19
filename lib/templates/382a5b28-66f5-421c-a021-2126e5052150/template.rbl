@@ -13,6 +13,7 @@
         <meta consistent name="keywords" content="<?app:keywords?>">
         <meta consistent name="og:type" content="website">
         <style media="screen"><?theme:css/main.css?></style>
+        <?template:head?>
     </head>
     <body>
         <div class="notifications"></div>

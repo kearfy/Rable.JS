@@ -8,7 +8,8 @@
     "clientScript": "client.js",
     "elements": {
         "navbar": "elements/navbar.rbl",
-        "footer": "elements/footer.rbl"
+        "footer": "elements/footer.rbl",
+        "head": "elements/head.rbl"
     },
     "errorDocument": {
         "403": "views/ErrorDocument403.html",
