@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>RouteHandler\Utils</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/search.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script> -->
+    <script src="scripts/fuse.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><h3>Classes</h3><ul><li><a href="Rable.html">Rable</a><ul class='methods'><li data-type='method'><a href="Rable.html#all">all</a></li><li data-type='method'><a href="Rable.html#clearProxy">clearProxy</a></li><li data-type='method'><a href="Rable.html#cors">cors</a></li><li data-type='method'><a href="Rable.html#get">get</a></li><li data-type='method'><a href="Rable.html#getErrorDocument">getErrorDocument</a></li><li data-type='method'><a href="Rable.html#getMimeType">getMimeType</a></li><li data-type='method'><a href="Rable.html#matchRoute">matchRoute</a></li><li data-type='method'><a href="Rable.html#matchUrl">matchUrl</a></li><li data-type='method'><a href="Rable.html#middlewares">middlewares</a></li><li data-type='method'><a href="Rable.html#obtainRoute">obtainRoute</a></li><li data-type='method'><a href="Rable.html#post">post</a></li><li data-type='method'><a href="Rable.html#registerMimeType">registerMimeType</a></li><li data-type='method'><a href="Rable.html#registerRoute">registerRoute</a></li><li data-type='method'><a href="Rable.html#setErrorDocument">setErrorDocument</a></li><li data-type='method'><a href="Rable.html#setProxy">setProxy</a></li><li data-type='method'><a href="Rable.html#static">static</a></li><li data-type='method'><a href="Rable.html#use">use</a></li></ul></li><li><a href="SmartTag.html">SmartTag</a><ul class='methods'><li data-type='method'><a href="SmartTag.html#getGlobalVariable">getGlobalVariable</a></li><li data-type='method'><a href="SmartTag.html#setGlobalVariable">setGlobalVariable</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method'><a href="Template.html#build">build</a></li><li data-type='method'><a href="Template.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Template.html#exists">exists</a></li><li data-type='method'><a href="Template.html#getElement">getElement</a></li><li data-type='method'><a href="Template.html#info">info</a></li><li data-type='method'><a href="Template.html#setElement">setElement</a></li></ul></li><li><a href="Theme.html">Theme</a><ul class='methods'><li data-type='method'><a href="Theme.html#build">build</a></li><li data-type='method'><a href="Theme.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Theme.html#exists">exists</a></li><li data-type='method'><a href="Theme.html#info">info</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-RouteHandler.html">RouteHandler</a></li><li><a href="module-RouteHandler_DataParser.html">RouteHandler\DataParser</a></li><li><a href="module-RouteHandler_Utils.html">RouteHandler\Utils</a><ul class='methods'><li data-type='method'><a href="module-RouteHandler_Utils.html#~cors">cors</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~json">json</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~redirect">redirect</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~send">send</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendError">sendError</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendFile">sendFile</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~setCookie">setCookie</a></li></ul></li></ul></div>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">RouteHandler\Utils</h1>
+    
+
+    
+
+
+
+
+<section>
+
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Utils that will ba attached to the request and response objects given the the route handler.</p></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line3">line 3</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~cors"><span class="type-signature">(inner) </span>cors<span class="signature">(value)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Apply a different cors policy than globally applied.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Allowed sources. Default = * (uppon called, otherwise the global configuration is applied).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line230">line 230</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~json"><span class="type-signature">(async, inner) </span>json<span class="signature">(data, config)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Send a json object to the client.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object that needs to be send to the client. Will automatically be converted to json.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>NOT REQUIRED: Further configuration of the response.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The status of the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set specific headers for the response.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line143">line 143</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~redirect"><span class="type-signature">(async, inner) </span>redirect<span class="signature">(url, permanent)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Redirect the client to a different location.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The follow-up URL.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>permanent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>State if the redirect is permanent. default = false.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line213">line 213</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~send"><span class="type-signature">(async, inner) </span>send<span class="signature">(content, config)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Send content to the client.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The content that needs to be send to the client.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>NOT REQUIRED: Further configuration of the response.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The status of the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set specific headers for the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>process</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Apply a loaded template yes or no.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Variables that will be passed on to Smart-tag</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line103">line 103</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~sendError"><span class="type-signature">(async, inner) </span>sendError<span class="signature">(content)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Send an error page to the client.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error code.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line177">line 177</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~sendFile"><span class="type-signature">(async, inner) </span>sendFile<span class="signature">(path, config)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Read the contents of a file and send it to the client.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path of the file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>NOT REQUIRED: Further configuration of the response.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The status of the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set specific headers for the response.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>process</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Apply a loaded template yes or no.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Variables that will be passed on to Smart-tag</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line53">line 53</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~setCookie"><span class="type-signature">(async, inner) </span>setCookie<span class="signature">(name, value, config)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Send a cookie to the client.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of the cookie.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Value of the cookie.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>NOT REQUIRED: Further configuration for the cookie. (the names of the subitems are case sensitive!)</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Expires</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Expiration of the cookie (timestamp).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>MaxAge</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>number of seconds before the cookie expires. MaxAge will precede Expires!</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Domain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>On which (sub)domain the cookie should be applied.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The root Path on which the cookie will be applied.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Secure</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>states if the cookie is secure which results in the cookie only being sent over https.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>HttpOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>states if the cookie is httponly which forbids javascript from accessing the cookie.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SameSite</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the policy for when a cookie is accessed from outside the current website. [Strict, Lax or None]</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="bin_handlers_appendUtils.js.html">bin/handlers/appendUtils.js</a>, <a href="bin_handlers_appendUtils.js.html#line11">line 11</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script>
+var list = [{"title":"Rable","link":"<a href=\"Rable.html\">Rable</a>"},{"title":"Rable#all","link":"<a href=\"Rable.html#all\">Rable &rtrif; all</a>"},{"title":"Rable#clearProxy","link":"<a href=\"Rable.html#clearProxy\">Rable &rtrif; clearProxy</a>"},{"title":"Rable#cors","link":"<a href=\"Rable.html#cors\">Rable &rtrif; cors</a>"},{"title":"Rable#get","link":"<a href=\"Rable.html#get\">Rable &rtrif; get</a>"},{"title":"Rable#getErrorDocument","link":"<a href=\"Rable.html#getErrorDocument\">Rable &rtrif; getErrorDocument</a>"},{"title":"Rable#getMimeType","link":"<a href=\"Rable.html#getMimeType\">Rable &rtrif; getMimeType</a>"},{"title":"Rable#matchRoute","link":"<a href=\"Rable.html#matchRoute\">Rable &rtrif; matchRoute</a>"},{"title":"Rable#matchUrl","link":"<a href=\"Rable.html#matchUrl\">Rable &rtrif; matchUrl</a>"},{"title":"Rable#middlewares","link":"<a href=\"Rable.html#middlewares\">Rable &rtrif; middlewares</a>"},{"title":"Rable#obtainRoute","link":"<a href=\"Rable.html#obtainRoute\">Rable &rtrif; obtainRoute</a>"},{"title":"Rable#post","link":"<a href=\"Rable.html#post\">Rable &rtrif; post</a>"},{"title":"Rable#registerMimeType","link":"<a href=\"Rable.html#registerMimeType\">Rable &rtrif; registerMimeType</a>"},{"title":"Rable#registerRoute","link":"<a href=\"Rable.html#registerRoute\">Rable &rtrif; registerRoute</a>"},{"title":"Rable#setErrorDocument","link":"<a href=\"Rable.html#setErrorDocument\">Rable &rtrif; setErrorDocument</a>"},{"title":"Rable#setProxy","link":"<a href=\"Rable.html#setProxy\">Rable &rtrif; setProxy</a>"},{"title":"Rable#static","link":"<a href=\"Rable.html#static\">Rable &rtrif; static</a>"},{"title":"Rable#use","link":"<a href=\"Rable.html#use\">Rable &rtrif; use</a>"},{"title":"SmartTag","link":"<a href=\"SmartTag.html\">SmartTag</a>"},{"title":"SmartTag#getGlobalVariable","link":"<a href=\"SmartTag.html#getGlobalVariable\">SmartTag &rtrif; getGlobalVariable</a>"},{"title":"SmartTag#setGlobalVariable","link":"<a href=\"SmartTag.html#setGlobalVariable\">SmartTag &rtrif; setGlobalVariable</a>"},{"title":"Template","link":"<a href=\"Template.html\">Template</a>"},{"title":"Template#build","link":"<a href=\"Template.html#build\">Template &rtrif; build</a>"},{"title":"Template#buildRoot","link":"<a href=\"Template.html#buildRoot\">Template &rtrif; buildRoot</a>"},{"title":"Template#exists","link":"<a href=\"Template.html#exists\">Template &rtrif; exists</a>"},{"title":"Template#getElement","link":"<a href=\"Template.html#getElement\">Template &rtrif; getElement</a>"},{"title":"Template#info","link":"<a href=\"Template.html#info\">Template &rtrif; info</a>"},{"title":"Template#setElement","link":"<a href=\"Template.html#setElement\">Template &rtrif; setElement</a>"},{"title":"Theme","link":"<a href=\"Theme.html\">Theme</a>"},{"title":"Theme#build","link":"<a href=\"Theme.html#build\">Theme &rtrif; build</a>"},{"title":"Theme#buildRoot","link":"<a href=\"Theme.html#buildRoot\">Theme &rtrif; buildRoot</a>"},{"title":"Theme#exists","link":"<a href=\"Theme.html#exists\">Theme &rtrif; exists</a>"},{"title":"Theme#info","link":"<a href=\"Theme.html#info\">Theme &rtrif; info</a>"},{"title":"RouteHandler","link":"<a href=\"module-RouteHandler.html\">RouteHandler</a>"},{"title":"RouteHandler\\DataParser","link":"<a href=\"module-RouteHandler_DataParser.html\">RouteHandler\\DataParser</a>"},{"title":"RouteHandler\\Utils","link":"<a href=\"module-RouteHandler_Utils.html\">RouteHandler\\Utils</a>"},{"title":"module:RouteHandler\\Utils~cors","link":"<a href=\"module-RouteHandler_Utils.html#~cors\">module:RouteHandler\\Utils~cors &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~json","link":"<a href=\"module-RouteHandler_Utils.html#~json\">module:RouteHandler\\Utils~json &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~redirect","link":"<a href=\"module-RouteHandler_Utils.html#~redirect\">module:RouteHandler\\Utils~redirect &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~send","link":"<a href=\"module-RouteHandler_Utils.html#~send\">module:RouteHandler\\Utils~send &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendError","link":"<a href=\"module-RouteHandler_Utils.html#~sendError\">module:RouteHandler\\Utils~sendError &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendFile","link":"<a href=\"module-RouteHandler_Utils.html#~sendFile\">module:RouteHandler\\Utils~sendFile &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~setCookie","link":"<a href=\"module-RouteHandler_Utils.html#~setCookie\">module:RouteHandler\\Utils~setCookie &rtrif; undefined</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>

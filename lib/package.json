@@ -1,6 +1,6 @@
 {
   "name": "rable.js",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Rable is a library for NodeJS providing an advanced router and templating system.",
   "main": "index.js",
   "author": "Micha de Vries",
