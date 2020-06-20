@@ -1,6 +1,7 @@
 {
     "port": 80,
     "ssl": false,
+    "standalone": false,
     "errorDocument": {
         "404": "DefaultDocument"
     },

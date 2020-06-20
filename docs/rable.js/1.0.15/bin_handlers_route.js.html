@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>bin/handlers/route.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/search.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script> -->
+    <script src="scripts/fuse.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme.css">
+    
+    
+    
+<svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/>
+                <path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html"><div class="text">Home</div></a></h2><div class="search-box"><input type="text" placeholder="Search..." id="search-box" /><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-list-div"><h3>Classes</h3><ul><li><a href="Rable.html">Rable</a><ul class='methods'><li data-type='method'><a href="Rable.html#all">all</a></li><li data-type='method'><a href="Rable.html#clearProxy">clearProxy</a></li><li data-type='method'><a href="Rable.html#cors">cors</a></li><li data-type='method'><a href="Rable.html#get">get</a></li><li data-type='method'><a href="Rable.html#getErrorDocument">getErrorDocument</a></li><li data-type='method'><a href="Rable.html#getMimeType">getMimeType</a></li><li data-type='method'><a href="Rable.html#handle">handle</a></li><li data-type='method'><a href="Rable.html#matchRoute">matchRoute</a></li><li data-type='method'><a href="Rable.html#matchUrl">matchUrl</a></li><li data-type='method'><a href="Rable.html#middlewares">middlewares</a></li><li data-type='method'><a href="Rable.html#obtainRoute">obtainRoute</a></li><li data-type='method'><a href="Rable.html#post">post</a></li><li data-type='method'><a href="Rable.html#registerMimeType">registerMimeType</a></li><li data-type='method'><a href="Rable.html#registerRoute">registerRoute</a></li><li data-type='method'><a href="Rable.html#setErrorDocument">setErrorDocument</a></li><li data-type='method'><a href="Rable.html#setProxy">setProxy</a></li><li data-type='method'><a href="Rable.html#static">static</a></li><li data-type='method'><a href="Rable.html#use">use</a></li></ul></li><li><a href="SmartTag.html">SmartTag</a><ul class='methods'><li data-type='method'><a href="SmartTag.html#getGlobalVariable">getGlobalVariable</a></li><li data-type='method'><a href="SmartTag.html#setGlobalVariable">setGlobalVariable</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method'><a href="Template.html#build">build</a></li><li data-type='method'><a href="Template.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Template.html#exists">exists</a></li><li data-type='method'><a href="Template.html#getElement">getElement</a></li><li data-type='method'><a href="Template.html#info">info</a></li><li data-type='method'><a href="Template.html#setElement">setElement</a></li></ul></li><li><a href="Theme.html">Theme</a><ul class='methods'><li data-type='method'><a href="Theme.html#build">build</a></li><li data-type='method'><a href="Theme.html#buildRoot">buildRoot</a></li><li data-type='method'><a href="Theme.html#exists">exists</a></li><li data-type='method'><a href="Theme.html#info">info</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-RouteHandler.html">RouteHandler</a></li><li><a href="module-RouteHandler_DataParser.html">RouteHandler\DataParser</a></li><li><a href="module-RouteHandler_Utils.html">RouteHandler\Utils</a><ul class='methods'><li data-type='method'><a href="module-RouteHandler_Utils.html#~cors">cors</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~json">json</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~redirect">redirect</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~send">send</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendError">sendError</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~sendFile">sendFile</a></li><li data-type='method'><a href="module-RouteHandler_Utils.html#~setCookie">setCookie</a></li></ul></li></ul></div>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">bin/handlers/route.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const appendUtils = require('./appendUtils.js');
+const fs = require('fs');
+
+/**
+  * Parser url, hostname, etc and picks the right route.
+  * @module RouteHandler
+  *
+  * @property {object} Request Contains all the information about the request. See NodeJS documentation.
+  * @property {string} Request.url The requested url.
+  * @property {string} Request.host The host where to the request was made.
+  * @property {number} Request.port The port where to the request was made.
+  * @property {boolean} Request.secure states if the request was made over ssl.
+  * @property {string} Request.fullUrl The full url of the request.
+  * @property {object} Request.data The data provided to Smarttag.
+  * @property {object} Request.params Parameters obtained from the url if defined.
+  * @property {boolean} Request.noTemplate States if a configured template should be loaded yes or no.
+  *
+  * @property {object} Request.proxy Only if a proxy was configured
+  * @property {string} Request.proxy.root The root of the proxy, example: /rootOfRableApp/
+  * @property {string} Request.proxy.host The host of the proxy.
+  * @property {number} Request.proxy.port The port of the proxy.
+  * @property {boolean} Request.proxy.secure States if proxy is https enabled or not.
+  * @property {string} Request.proxyUrl The requested proxy url.
+  * @property {string} Request.proxyHost The proxy host where to the request was made.
+  * @property {number} Request.proxyPort The proxy port where to the request was made.
+  * @property {boolean} Request.proxySecure states if the proxy request was made over ssl.
+  * @property {string} Request.fullProxyUrl The full proxy url of the request.
+  *
+  * @property {object} Response Contains all the information that will be returned to the client as well as some utilities. See NodeJS documentation.
+  * @property {object} Response.body Data passed through the body. See RouteHandler\DataParser for more.
+  * @property {object} Response.query Data passed through the url. See RouteHandler\DataParser for more.
+  * @property {Function} Response.sendFile Send the contents of a file to the client. See RouteHandler\Utils for more.
+  * @property {Function} Response.send Send content to the client. See RouteHandler\Utils for more.
+  * @property {Function} Response.json Send a json object to the client. See RouteHandler\Utils for more.
+  * @property {Function} Response.sendError Send an error page to the client. See RouteHandler\Utils for more.
+  * @property {Function} Response.redirect Redirect the client to a different location. See RouteHandler\Utils for more.
+  * @property {Function} Response.cors Apply a different cors policy than globally applied. See RouteHandler\Utils for more.
+  */
+
+module.exports = (req, res, master, routes) => {
+    res.setHeader('X-Powered-By', 'Rable');
+    if (master.config.allowedSources !== false) res.setHeader('Access-Control-Allow-Origin', master.config.allowedSources);
+    require('./data.js')(req, res, (req, res) => {
+        req.initialUrl = req.url;
+        req.proxy = master.config.proxy;
+        if (master.config.proxy !== false) {
+            req.proxyUrl = req.url;
+            req.proxyHost = (req.headers.host.split(':').length > 1 ? req.headers.host.split(':')[0] : req.headers.host);
+            req.proxyPort = master.server.address().port;
+            req.proxySecure = (req.connection.encrypted || req.headers['x-forwarded-proto'] === 'https');
+            req.proxyProtocol = (req.proxySecure === true ? 'https' : 'http');
+            req.fullProxyUrl = req.proxyProtocol + '://' + req.proxyHost + ':' + req.proxyPort + req.proxyUrl;
+
+            req.url = master.config.proxy.root.slice(0, -1) + req.url;
+            req.host = master.config.proxy.host;
+            req.port = master.config.proxy.port;
+            req.secure = master.config.proxy.secure;
+            req.protocol = (master.config.proxy.secure === true ? 'https' : 'http');
+            req.fullUrl = req.protocol + '://' + req.host + ':' + req.port + req.url;
+        } else {
+            req.url = req.url;
+            req.host = (req.headers.host.split(':').length > 1 ? req.headers.host.split(':')[0] : req.headers.host);
+            req.port = master.server.address().port;
+            req.secure = (req.connection.encrypted || req.headers['x-forwarded-proto'] === 'https');
+            req.protocol = (req.secure === true ? 'https' : 'http');
+            req.fullUrl = req.protocol + '://' + req.host + ':' + req.port + req.url;
+        }
+
+        req.params = req.data = {};
+        req.noTemplate = false;
+        req.info = {};
+        var url = (master.config.proxy !== false &amp;&amp; master.config.matchByProxy ? req.proxyUrl : req.url),
+            matchedRoute = master.matchRoute(url, req.method);
+
+        if (matchedRoute === null) {
+            var final = {
+                action: master.getErrorDocument(404),
+                status: 404,
+                static: false
+            }
+        } else {
+            var route = master.obtainRoute(matchedRoute.uuid),
+                final = {
+                    action: route.action,
+                    status: 200,
+                    static: false
+                }
+
+            req.data = route.data;
+            req.params = matchedRoute.params;
+            req.noTemplate = route.noTemplate;
+            req.info = route.info;
+            if (route.method == 'static') final.static = true;
+        }
+
+        console.log(req.method.toUpperCase() + ': ' + url + '');
+        appendUtils(req, res, master, (req, res) => {
+            var handled = handleMiddlewares(req, res, master.middlewares());
+            handled = handleMiddlewares(handled.req, handled.res, master.middlewares(url));
+            if (final.static) {
+                var staticRoot = route.action.replace(/\\/g, "/");
+                    staticRoot = (staticRoot.charAt(staticRoot.length - 1) == '/' ? staticRoot : staticRoot + '/');
+                var target = (matchedRoute.target === undefined ? '' : matchedRoute.target);
+                var finalTarget = staticRoot + target;
+
+                fs.stat(finalTarget, (e, stat) => {
+                    if (e) return res.sendError(404);
+                    if (stat.isDirectory()) {
+                        finalTarget = (finalTarget.charAt(finalTarget.length - 1) == '/' ? finalTarget : finalTarget + '/');
+                        var directoryIndex = null;
+                        for (var i = 0; i &lt; master.config.directoryIndexes.length; i++) {
+                            var item = master.config.directoryIndexes[i];
+                            if (directoryIndex == null) {
+                                try {
+                                    var innerstat = fs.statSync(finalTarget + item);
+                                    if (!innerstat.isDirectory()) directoryIndex = item;
+                                } catch(e) {}
+                            }
+                        }
+
+                        if (directoryIndex == null) {
+                            res.sendError(403);
+                        } else {
+                            if (req.initialUrl.slice(-1) !== '/') {
+                                res.redirect(req.initialUrl + '/');
+                            } else {
+                                res.sendFile(finalTarget + directoryIndex);
+                            }
+                        }
+                    } else {
+                        res.sendFile(finalTarget);
+                    }
+                });
+            } else {
+                if (final.action.constructor.name === 'String') {
+                    res.sendFile(final.action, {status:final.status});
+                } else {
+                    this.req = handled.req;
+                    this.res = handled.res;
+                    final.action(req, res);
+                }
+            }
+        });
+    });
+}
+
+function handleMiddlewares(givenReq, givenRes, middlewares) {
+    middlewares.forEach(middleware => middleware.call(req = givenReq, res = givenRes, next = () => {
+        givenReq = req;
+        givenRes = res;
+    }));
+
+    return {
+        req: givenReq,
+        res: givenRes
+    };
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+  
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script>
+var list = [{"title":"Rable","link":"<a href=\"Rable.html\">Rable</a>"},{"title":"Rable#all","link":"<a href=\"Rable.html#all\">Rable &rtrif; all</a>"},{"title":"Rable#clearProxy","link":"<a href=\"Rable.html#clearProxy\">Rable &rtrif; clearProxy</a>"},{"title":"Rable#cors","link":"<a href=\"Rable.html#cors\">Rable &rtrif; cors</a>"},{"title":"Rable#get","link":"<a href=\"Rable.html#get\">Rable &rtrif; get</a>"},{"title":"Rable#getErrorDocument","link":"<a href=\"Rable.html#getErrorDocument\">Rable &rtrif; getErrorDocument</a>"},{"title":"Rable#getMimeType","link":"<a href=\"Rable.html#getMimeType\">Rable &rtrif; getMimeType</a>"},{"title":"Rable#handle","link":"<a href=\"Rable.html#handle\">Rable &rtrif; handle</a>"},{"title":"Rable#matchRoute","link":"<a href=\"Rable.html#matchRoute\">Rable &rtrif; matchRoute</a>"},{"title":"Rable#matchUrl","link":"<a href=\"Rable.html#matchUrl\">Rable &rtrif; matchUrl</a>"},{"title":"Rable#middlewares","link":"<a href=\"Rable.html#middlewares\">Rable &rtrif; middlewares</a>"},{"title":"Rable#obtainRoute","link":"<a href=\"Rable.html#obtainRoute\">Rable &rtrif; obtainRoute</a>"},{"title":"Rable#post","link":"<a href=\"Rable.html#post\">Rable &rtrif; post</a>"},{"title":"Rable#registerMimeType","link":"<a href=\"Rable.html#registerMimeType\">Rable &rtrif; registerMimeType</a>"},{"title":"Rable#registerRoute","link":"<a href=\"Rable.html#registerRoute\">Rable &rtrif; registerRoute</a>"},{"title":"Rable#setErrorDocument","link":"<a href=\"Rable.html#setErrorDocument\">Rable &rtrif; setErrorDocument</a>"},{"title":"Rable#setProxy","link":"<a href=\"Rable.html#setProxy\">Rable &rtrif; setProxy</a>"},{"title":"Rable#static","link":"<a href=\"Rable.html#static\">Rable &rtrif; static</a>"},{"title":"Rable#use","link":"<a href=\"Rable.html#use\">Rable &rtrif; use</a>"},{"title":"SmartTag","link":"<a href=\"SmartTag.html\">SmartTag</a>"},{"title":"SmartTag#getGlobalVariable","link":"<a href=\"SmartTag.html#getGlobalVariable\">SmartTag &rtrif; getGlobalVariable</a>"},{"title":"SmartTag#setGlobalVariable","link":"<a href=\"SmartTag.html#setGlobalVariable\">SmartTag &rtrif; setGlobalVariable</a>"},{"title":"Template","link":"<a href=\"Template.html\">Template</a>"},{"title":"Template#build","link":"<a href=\"Template.html#build\">Template &rtrif; build</a>"},{"title":"Template#buildRoot","link":"<a href=\"Template.html#buildRoot\">Template &rtrif; buildRoot</a>"},{"title":"Template#exists","link":"<a href=\"Template.html#exists\">Template &rtrif; exists</a>"},{"title":"Template#getElement","link":"<a href=\"Template.html#getElement\">Template &rtrif; getElement</a>"},{"title":"Template#info","link":"<a href=\"Template.html#info\">Template &rtrif; info</a>"},{"title":"Template#setElement","link":"<a href=\"Template.html#setElement\">Template &rtrif; setElement</a>"},{"title":"Theme","link":"<a href=\"Theme.html\">Theme</a>"},{"title":"Theme#build","link":"<a href=\"Theme.html#build\">Theme &rtrif; build</a>"},{"title":"Theme#buildRoot","link":"<a href=\"Theme.html#buildRoot\">Theme &rtrif; buildRoot</a>"},{"title":"Theme#exists","link":"<a href=\"Theme.html#exists\">Theme &rtrif; exists</a>"},{"title":"Theme#info","link":"<a href=\"Theme.html#info\">Theme &rtrif; info</a>"},{"title":"RouteHandler","link":"<a href=\"module-RouteHandler.html\">RouteHandler</a>"},{"title":"RouteHandler\\DataParser","link":"<a href=\"module-RouteHandler_DataParser.html\">RouteHandler\\DataParser</a>"},{"title":"RouteHandler\\Utils","link":"<a href=\"module-RouteHandler_Utils.html\">RouteHandler\\Utils</a>"},{"title":"module:RouteHandler\\Utils~cors","link":"<a href=\"module-RouteHandler_Utils.html#~cors\">module:RouteHandler\\Utils~cors &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~json","link":"<a href=\"module-RouteHandler_Utils.html#~json\">module:RouteHandler\\Utils~json &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~redirect","link":"<a href=\"module-RouteHandler_Utils.html#~redirect\">module:RouteHandler\\Utils~redirect &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~send","link":"<a href=\"module-RouteHandler_Utils.html#~send\">module:RouteHandler\\Utils~send &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendError","link":"<a href=\"module-RouteHandler_Utils.html#~sendError\">module:RouteHandler\\Utils~sendError &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~sendFile","link":"<a href=\"module-RouteHandler_Utils.html#~sendFile\">module:RouteHandler\\Utils~sendFile &rtrif; undefined</a>"},{"title":"module:RouteHandler\\Utils~setCookie","link":"<a href=\"module-RouteHandler_Utils.html#~setCookie\">module:RouteHandler\\Utils~setCookie &rtrif; undefined</a>"}];
+setupSearch(list)
+</script>
+
+ 
+<script type="text/javascript" src="scripts/misc.js"></script>
+</body>
+</html>
