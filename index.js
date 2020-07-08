@@ -22,6 +22,8 @@ app.get('/servererror', (req, res) => res.sendError(500, req.query));
 app.static('/assets', __dirname + '/assets');
 app.static('/docs', __dirname + '/docs/rable.js', {noTemplate: true});
 
-app.all('/secondary/~', function(req, res) { secondary.handle(req, res) });
+app.all('/secondary', (req, res) => secondary.handle(req, res));
+app.all('/secondary/~', (req, res) => secondary.handle(req, res));
+
 secondary.get('/', (req, res) => res.send('This is the root url of the secondary router.'));
 secondary.get('/other', (req, res) => res.send('This is the other page of the secondary router.'));
